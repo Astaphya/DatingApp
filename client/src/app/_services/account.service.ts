@@ -6,6 +6,8 @@ import { User } from '../_models/User';
 @Injectable({
   providedIn: 'root'
 })
+
+//This is the service that handles all the account related functions
 export class AccountService {
 
   baseUrl: string = 'https://localhost:5001/api/';
