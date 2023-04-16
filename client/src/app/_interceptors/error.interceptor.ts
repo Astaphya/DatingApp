@@ -15,7 +15,7 @@ export class ErrorInterceptor implements HttpInterceptor {
 
   constructor(private router: Router, private toastr: ToastrService) { }
 
-   //This function intercepts the error and displays the error message on the screen
+  //This function intercepts the error and displays the error message on the screen
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
@@ -29,7 +29,7 @@ export class ErrorInterceptor implements HttpInterceptor {
                     modalStateErrors.push(error.error.errors[key])
                   }
                 }
-                throw modalStateErrors.flat(); 
+                throw modalStateErrors.flat();
               } else {
                 this.toastr.error(error.error, error.status.toString());
               }
