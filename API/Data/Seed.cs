@@ -10,7 +10,10 @@ namespace API.Data
     {
         public static async Task SeedUsers(DataContext context)
         {
-            if(await context.Users.AnyAsync()) return;
+            if(await context.Users.AnyAsync()) return; // if users exist, return. 
+            
+            // if not, add users. 
+            // read json file and convert to list of users. 
             var userData = await File.ReadAllTextAsync("Data/UserSeedData.json");
             var options = new JsonSerializerOptions {PropertyNameCaseInsensitive = true};
             var users = JsonSerializer.Deserialize<List<AppUser>>(userData);
