@@ -49,6 +49,8 @@ export class MemberDetailComponent implements OnInit {
   }
 
   loadMember() {
+    // get username from url (member/username)
+    // get member by username from service
     const username = this.route.snapshot.paramMap.get('username');
     if (!username) return;
     this.memberService.getMember(username).subscribe({

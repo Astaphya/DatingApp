@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top " >
+<nav class="navbar navbar-expand-md navbar-dark fixed-top ">
     <div class="container">
         <a class="navbar-brand" routerLink="/" routerLinkActive="active">Dating App</a>
         <ul class="nav nav-pills me-auto mb-2 mb-md-0">
@@ -21,10 +21,11 @@
         </ul>
         <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
             <!--pipe : Eğer currentuser$ null değil ise loggedIn olduğunu biliriz ve true döndürür-->
-            <span class="navbar-text">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" dropdownToggle>Welcome {{user.username |
-                    titlecase}}</a>
-            </span>
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" dropdownToggle>
+                <img src="{{user.photoUrl || './assets/user.png'}}" alt="User photo">
+                {{user.username | titlecase}}
+              </a>
+              
             <div class="dropdown-menu mt-3" *dropdownMenu>
                 <a class="dropdown-item" routerLink="/member/edit">Edit Profile</a>
                 <a class="dropdown-item" (click)="logout()">Logout</a>

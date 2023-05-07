@@ -13,9 +13,7 @@ export class NavComponent implements OnInit {
 
   constructor(public accountService: AccountService, private router: Router, private toastr: ToastrService) { }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
 
   login() {
@@ -23,7 +21,7 @@ export class NavComponent implements OnInit {
       {
         next: () => {
           this.router.navigateByUrl('/members'), // Adding routing via code
-            this.toastr.success('Logged in')
+          this.toastr.success('Logged in')
         }
       }
     )
@@ -31,10 +29,10 @@ export class NavComponent implements OnInit {
 
   logout() {
     this.accountService.logout();
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/'); // Adding routing via code  
     this.toastr.info('Logged out');
     this.model.username = "";
     this.model.password = "";
-  }
+  }   
 
 }

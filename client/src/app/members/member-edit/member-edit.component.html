@@ -1,6 +1,6 @@
 <div class="row" *ngIf="member">
     <div class="col-4">
-        <h1 style="text-align: center;">Your Profile</h1>
+        <h2>Your Profile</h2>
     </div>
     <div class="col-8">
         <div class="alert alert-warning pb-1"  *ngIf="editForm.dirty">
@@ -58,10 +58,13 @@
                         <label for="country"> Country </label>
                         <input type="text" [(ngModel)]="member.country" name="country" class="form-control mx-2" style="background-color:#373740; color: whitesmoke;">
                     </div>
+                    <div>
+                        {{editForm.value.introduction}}
+                    </div>
                 </form>    
             </tab>
             <tab heading="Edit Photos">
-                <p>Photo edit will go here</p>
+                <app-photo-editor [member]="member" ></app-photo-editor>
                 </tab>
         </tabset>
     </div>

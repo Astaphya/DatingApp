@@ -23,7 +23,6 @@ export class JwtInterceptor implements HttpInterceptor {
             setHeaders: { Authorization: `Bearer ${user.token}` }
 
           })
-
       }
 
     })
