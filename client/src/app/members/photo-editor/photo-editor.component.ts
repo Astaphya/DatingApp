@@ -15,58 +15,55 @@ import { environment } from 'src/app/environment';
   styleUrls: ['./photo-editor.component.css']
 })
 export class PhotoEditorComponent implements OnInit {
-  @Input () member : Member | undefined;
-  uploader : FileUploader | undefined;
-  hasBaseDropZoneOver : boolean = false;
-  baseUrl :string = environment.apiUrl;
-  user : User | undefined;
+  @Input() member: Member | undefined;
+  uploader: FileUploader | undefined;
+  hasBaseDropZoneOver: boolean = false;
+  baseUrl: string = environment.apiUrl;
+  user: User | undefined;
 
-  constructor(private accountService: AccountService, private memberService :MembersService,private toastr:ToastrService) {
+  constructor(private accountService: AccountService, private memberService: MembersService, private toastr: ToastrService) {
     this.accountService.currentUser$.pipe(take(1)).subscribe({
       next: user => {
         if (user) this.user = user
       }
     });
-   }
+  }
 
   ngOnInit(): void {
     this.initializeUploader();
   }
 
-  fileOverBase(e:any) {
+  fileOverBase(e: any) {
     this.hasBaseDropZoneOver = e;
   }
 
-  setMainPhoto(photo : Photo) {
+  setMainPhoto(photo: Photo) {
     this.memberService.setMainPhoto(photo.id).subscribe({
       next: () => {
-        if(this.user && this.member) {
+        if (this.user && this.member) {
           this.user.photoUrl = photo.url;
           this.accountService.setCurrentUser(this.user);
           this.member.photoUrl = photo.url;
           this.member.photos.forEach(p => {
-            if(p.isMain) p.isMain = false;
-            if(p.id === photo.id) p.isMain = true;
-            
+            if (p.isMain) p.isMain = false;
+            if (p.id === photo.id) p.isMain = true;
+
           });
         }
-       
       }
-      
     })
-
   }
 
-  deletePhoto(photoId:number) {
+  deletePhoto(photoId: number) {
     this.memberService.deletePhoto(photoId).subscribe({
-      next : () => {
-        if(this.member){
+      next: () => {
+        if (this.member) {
           this.toastr.success('Photo deleted');
           this.member.photos = this.member.photos.filter(p => p.id !== photoId);
         }
 
-      }   
-      
+      }
+
     });
   }
 
@@ -89,7 +86,13 @@ export class PhotoEditorComponent implements OnInit {
       if (response) {
         const photo = JSON.parse(response);
         this.member?.photos.push(photo);
+        if (photo.isMain && this.user && this.member) {
+          this.user.photoUrl = photo.url;
+          this.member.photoUrl = photo.url;
+          this.accountService.setCurrentUser(this.user);
+        }
       }
+
     }
   }
 

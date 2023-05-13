@@ -3,6 +3,7 @@ import { environment } from '../environment';
 import { HttpClient } from '@angular/common/http';
 import { Member } from '../_models/member';
 import { map, of } from 'rxjs';
+import { User } from '../_models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -10,18 +11,22 @@ import { map, of } from 'rxjs';
 export class MembersService {
   baseUrl : string = environment.apiUrl;
   members : Member[] = [];
+  isNewRegister : boolean = false;
 
   constructor(private http : HttpClient) { }
 
   getMembers() {
-    if(this.members.length > 0) return of(this.members);
+    const user : User = JSON.parse(localStorage.getItem('user')!);
+
+    if(this.members.length > 0 && !this.isNewRegister) return of(this.members);
     return this.http.get<Member[]>(this.baseUrl + 'users').pipe(
       map(members => {
         this.members = members;
+        this.isNewRegister = false;
         return members; 
-      })
+      }),
+      
     )
-  
   }
 
   getMember(username : string) {

@@ -2,7 +2,7 @@ namespace API.DTOs
 {
     public class MemberDto
     {
-         public int Id { get; set; }
+        public int Id { get; set; }
 
         public string UserName { get; set; }
         public string PhotoUrl { get; set; }
@@ -17,8 +17,6 @@ namespace API.DTOs
         public string City { get; set;}
         public string Country { get; set;}
         public List<PhotoDto> Photos { get; set; } 
-
-        
         
     }
 }
