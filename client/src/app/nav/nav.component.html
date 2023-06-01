@@ -23,7 +23,7 @@
             <!--pipe : Eğer currentuser$ null değil ise loggedIn olduğunu biliriz ve true döndürür-->
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" dropdownToggle>
                 <img src="{{user.photoUrl || './assets/user.png'}}" alt="User photo">
-                {{user.username | titlecase}}
+                {{user.knownAs | titlecase}}
               </a>
               
             <div class="dropdown-menu mt-3" *dropdownMenu>

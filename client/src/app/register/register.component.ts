@@ -52,7 +52,7 @@ export class RegisterComponent implements OnInit {
     const values = {...this.registerForm.value, dateOfBirth: dob};
     this.accountService.register(values).subscribe({
       next: () => {
-        this.memberService.isNewRegister = true;
+        //this.memberService.isNewRegister = true;
         this.toastr.success("Registered")
         this.router.navigateByUrl('/members')
       },
