@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Common\Mappings\Likes\" />
+      <Folder Include="Common\Mappings\Members\" />
+      <Folder Include="Common\Mappings\Messages\" />
+      <Folder Include="Handlers\Likes\Models\" />
+      <Folder Include="Handlers\Members\Commands\" />
+      <Folder Include="Handlers\Members\Models\" />
+      <Folder Include="Handlers\Members\Queries\" />
+      <Folder Include="Handlers\Models\" />
+      <Folder Include="Handlers\Users\Auth\" />
+      <Folder Include="Handlers\Users\Models\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="12.0.1" />
+      <PackageReference Include="CloudinaryDotNet" Version="1.20.0" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DatingApp.Domain\DatingApp.Domain.csproj" />
+      <ProjectReference Include="..\DatingApp.Shared\DatingApp.Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.AspNetCore.Http.Abstractions" />
+      <Reference Include="Microsoft.AspNetCore.Http.Features">
+        <HintPath>..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.AspNetCore.App\7.0.9\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.AspNetCore.Mvc.Abstractions">
+        <HintPath>..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.AspNetCore.App\7.0.9\Microsoft.AspNetCore.Mvc.Abstractions.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
+        <HintPath>..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.AspNetCore.App\7.0.9\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>

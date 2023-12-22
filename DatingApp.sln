@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{BD775A0B-1810-4C70-AF9B-C3A2C9CF7B21}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Presentation", "DatingApp.Presentation\DatingApp.Presentation.csproj", "{BD775A0B-1810-4C70-AF9B-C3A2C9CF7B21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Domain", "DatingApp.Domain\DatingApp.Domain.csproj", "{D7E7EDD5-9E4F-4C2B-B93B-34426951F007}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Application", "DatingApp.Application\DatingApp.Application.csproj", "{F650D1BD-1437-4659-8321-C7ECCB351D53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Shared", "DatingApp.Shared\DatingApp.Shared.csproj", "{1F98CD6B-02DA-4ECE-B7C1-C7D828762522}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Infrastructure", "DatingApp.Infrastructure\DatingApp.Infrastructure.csproj", "{11F6E632-4374-4E2D-BC4F-3A6D870EFF2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +26,21 @@ Global
 		{BD775A0B-1810-4C70-AF9B-C3A2C9CF7B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD775A0B-1810-4C70-AF9B-C3A2C9CF7B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD775A0B-1810-4C70-AF9B-C3A2C9CF7B21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7E7EDD5-9E4F-4C2B-B93B-34426951F007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7E7EDD5-9E4F-4C2B-B93B-34426951F007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7E7EDD5-9E4F-4C2B-B93B-34426951F007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7E7EDD5-9E4F-4C2B-B93B-34426951F007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F650D1BD-1437-4659-8321-C7ECCB351D53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F650D1BD-1437-4659-8321-C7ECCB351D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F650D1BD-1437-4659-8321-C7ECCB351D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F650D1BD-1437-4659-8321-C7ECCB351D53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F98CD6B-02DA-4ECE-B7C1-C7D828762522}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F98CD6B-02DA-4ECE-B7C1-C7D828762522}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F98CD6B-02DA-4ECE-B7C1-C7D828762522}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F98CD6B-02DA-4ECE-B7C1-C7D828762522}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11F6E632-4374-4E2D-BC4F-3A6D870EFF2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11F6E632-4374-4E2D-BC4F-3A6D870EFF2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11F6E632-4374-4E2D-BC4F-3A6D870EFF2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11F6E632-4374-4E2D-BC4F-3A6D870EFF2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
